@@ -1,0 +1,376 @@
+/* ============================================================
+   ESTILOS DEL SITIO — Ninfa Espinoza
+   ============================================================
+   Aqui vive TODO lo visual: colores, tamanos, espacios.
+   El contenido esta en index.html.
+
+   Si quieres cambiar los colores de todo el sitio, cambia
+   solo los valores de :root aqui abajo. Todo lo demas los usa.
+   ============================================================ */
+
+/* ---------- 1. VARIABLES DE COLOR ---------- */
+/* Una variable es un color guardado con un nombre.
+   Se usa despues escribiendo var(--nombre). */
+:root {
+  --bg:        #faf9f7;  /* fondo de la pagina, blanco calido */
+  --surface:   #ffffff;  /* fondo de tarjetas */
+  --text:      #1a1a18;  /* texto principal */
+  --text-soft: #6b6862;  /* texto secundario, mas claro */
+  --line:      #e4e0d9;  /* lineas divisorias */
+  --accent:    #8a5a3b;  /* color de enfasis, terracota */
+
+  --max-width: 1200px;
+  --radius: 2px;
+}
+
+/* Modo oscuro: se activa solo si la computadora esta en modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #121211;
+    --surface:   #1c1c1a;
+    --text:      #f0eeea;
+    --text-soft: #a09b93;
+    --line:      #2e2d2a;
+    --accent:    #c98d63;
+  }
+}
+
+/* ---------- 2. BASE ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--accent); }
+
+/* ---------- 3. MENU SUPERIOR ---------- */
+.site-header {
+  position: sticky;      /* se queda pegado arriba al bajar */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+.site-header nav a {
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-soft);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.site-header nav a:hover,
+.site-header nav a.active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- 4. PORTADA ---------- */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 7rem 2rem 5rem;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin: 0 0 1.2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 8vw, 5rem);  /* crece con la pantalla */
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.hero-sub {
+  max-width: 34rem;
+  margin: 1.5rem auto 2.5rem;
+  color: var(--text-soft);
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.button {
+  display: inline-block;
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--text);
+  padding: 0.85rem 2.2rem;
+  transition: background 0.25s, color 0.25s;
+}
+
+.button:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ---------- 5. SECCIONES ---------- */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.section-narrow { max-width: 46rem; }
+
+.section-title {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin: 0 0 2.8rem;
+}
+
+.prose p { margin: 0 0 1.4rem; }
+.prose p:last-child { margin-bottom: 0; }
+
+/* ---------- 6. GALERIA DE OBRAS ---------- */
+/* grid = cuadricula. auto-fill acomoda las columnas solo,
+   segun el ancho de la pantalla. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 3.5rem 2.5rem;
+}
+
+.work { margin: 0; }
+
+.work img {
+  width: 100%;
+  height: 360px;
+  /* contain = muestra la obra COMPLETA, sin recortarla.
+     Si usaramos "cover" se veria mas parejo, pero cortaria
+     los bordes de las pinturas, y eso no se hace en un
+     portafolio de arte. */
+  object-fit: contain;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 0.75rem;
+  cursor: zoom-in;
+  transition: opacity 0.25s;
+}
+
+.work img:hover { opacity: 0.82; }
+
+.work h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 1.1rem 0 0.35rem;
+}
+
+.work-meta {
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+.work-note {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-soft);
+  margin: 0.6rem 0 0;
+  line-height: 1.5;
+}
+
+/* ---------- 7. SECCION "ABOUT" ---------- */
+.about-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.portrait {
+  width: 100%;
+  border: 1px solid var(--line);
+}
+
+/* En pantallas angostas (celular), una sola columna */
+@media (max-width: 760px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .portrait { max-width: 320px; }
+}
+
+/* ---------- 8. CV ---------- */
+.cv-heading {
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  margin: 2.6rem 0 0.9rem;
+}
+
+.cv-heading:first-of-type { margin-top: 0; }
+
+.cv-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.year {
+  flex: 0 0 5.5rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  padding-top: 0.15rem;
+}
+
+.tag {
+  font-family: system-ui, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  border: 1px solid var(--line);
+  padding: 0.1rem 0.5rem;
+  align-self: center;
+}
+
+/* ---------- 9. CONTACTO ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.contact-label {
+  font-family: system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin: 0 0 0.4rem;
+}
+
+.contact-grid p { margin: 0; }
+
+/* ---------- 10. PIE DE PAGINA ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.site-footer p {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+/* ---------- 11. VISOR DE IMAGENES ---------- */
+.lightbox {
+  position: fixed;      /* cubre toda la pantalla */
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 3rem 1.5rem;
+  background: rgba(10, 10, 9, 0.94);
+}
+
+/* hidden es un atributo de HTML; esto asegura que lo respete */
+.lightbox[hidden] { display: none; }
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+}
+
+.lightbox p {
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: #d8d4cc;
+  text-align: center;
+  margin: 0;
+  max-width: 44rem;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.6rem;
+  background: none;
+  border: none;
+  color: #d8d4cc;
+  font-size: 2.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+}
+
+.lightbox-close:hover { color: #fff; }
+
+/* ---------- 12. AJUSTES PARA CELULAR ---------- */
+@media (max-width: 640px) {
+  .site-header { padding: 0.9rem 1.2rem; }
+  .site-header nav { gap: 1rem; }
+  .hero { padding: 4rem 1.2rem 3.5rem; }
+  .section { padding: 3.5rem 1.2rem; }
+  .work img { height: 260px; }
+}

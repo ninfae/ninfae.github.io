@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  SITIO WEB DE NINFA ESPINOZA
+  ============================================================
+  Este archivo es la ESTRUCTURA de la pagina: el contenido y
+  como esta organizado. Los colores y el diseno estan en
+  style.css, y la interactividad en script.js.
+
+  Para cambiar un texto, buscalo aqui y escribe encima.
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <!-- Le dice al navegador que el texto usa acentos y enes -->
+  <meta charset="UTF-8">
+  <!-- Hace que la pagina se vea bien en celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- El texto que aparece en la pestana del navegador -->
+  <title>Ninfa Espinoza — Contemporary Visual Artist</title>
+
+  <!-- Descripcion que muestra Google en los resultados de busqueda -->
+  <meta name="description" content="Ninfa Espinoza (b. 1992) is a Honduran visual artist based in San Pedro Sula. Her paintings explore everyday life, urban space, and collective memory.">
+
+  <!-- Conecta este archivo con la hoja de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ========== MENU DE NAVEGACION ========== -->
+  <header class="site-header">
+    <a href="#top" class="logo">Ninfa Espinoza</a>
+    <nav>
+      <a href="#works">Works</a>
+      <a href="#statement">Statement</a>
+      <a href="#about">About</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ========== PORTADA ========== -->
+  <section id="top" class="hero">
+    <p class="hero-eyebrow">Contemporary Visual Artist</p>
+    <h1>Ninfa Espinoza</h1>
+    <p class="hero-sub">Painting the quiet narratives of everyday life in Honduras.</p>
+    <a href="#works" class="button">View works</a>
+  </section>
+
+  <!-- ========== GALERIA DE OBRAS ========== -->
+  <section id="works" class="section">
+    <h2 class="section-title">Works</h2>
+
+    <!--
+      Cada <figure> es una obra. Para agregar una nueva, copia
+      un bloque completo y cambia la imagen y los textos.
+      El atributo alt describe la imagen para personas ciegas.
+    -->
+    <div class="gallery">
+
+      <figure class="work">
+        <img src="images/works/tierno-desborde.jpg" alt="Tierno Desborde — mixed media painting of a face split between a painted grayscale scream and a photographic child's eye" loading="lazy">
+        <figcaption>
+          <h3>Tierno Desborde</h3>
+          <p class="work-meta">2025 · Mixed media · 70 × 70 cm</p>
+          <p class="work-note">Selected for <em>Te odio: el odio como estrategia de poder y control político y social</em>, Centro Cultural de España, Costa Rica, 2025</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/amor-para-llevar.jpg" alt="Amor Para Llevar — mixed media painting" loading="lazy">
+        <figcaption>
+          <h3>Amor Para Llevar</h3>
+          <p class="work-meta">2026 · Mixed media · 60 × 60 cm</p>
+          <p class="work-note">Selected for <em>Esencia de Mujer</em>, Centro Cultural Sampedrano, 2026</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/transitando-en-resiliencia.jpg" alt="Transitando en Resiliencia — mixed media painting" loading="lazy">
+        <figcaption>
+          <h3>Transitando en Resiliencia</h3>
+          <p class="work-meta">2025 · Mixed media · 100 × 100 cm</p>
+          <p class="work-note">Selected for the XXXVI National Art Salon, Centro Cultural Sampedrano, 2025</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/lazos-de-ninez-al-atardecer.jpg" alt="Lazos de niñez al atardecer — mixed media painting" loading="lazy">
+        <figcaption>
+          <h3>Lazos de niñez al atardecer</h3>
+          <p class="work-meta">2025 · Mixed media · 80 × 80 cm</p>
+          <p class="work-note">Selected for <em>El Arte y la Paz</em>, Torre Banpaís, 2025</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/serena-compania-en-la-esperanza.jpg" alt="Serena compañía en la esperanza — mixed media painting" loading="lazy">
+        <figcaption>
+          <h3>Serena compañía en la esperanza</h3>
+          <p class="work-meta">2025 · Mixed media · 100 × 70 cm</p>
+          <p class="work-note">Selected for <em>El Arte y la Paz</em>, Torre Banpaís, 2025</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/vendedoras-de-nances.jpg" alt="Vendedoras de Nances — mixed media painting of street vendors" loading="lazy">
+        <figcaption>
+          <h3>Vendedoras de Nances</h3>
+          <p class="work-meta">2024 · Mixed media · 90 × 60 cm</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/helados-en-la-avenida.jpg" alt="Helados en la avenida — painting of an ice cream vendor pushing a cart past pigeons on a city street" loading="lazy">
+        <figcaption>
+          <h3>Helados en la avenida</h3>
+          <p class="work-meta">2023 · Mixed media · 70 × 50 cm</p>
+          <p class="work-note">Honorable Mention, New Artist — XXXIII National Art Salon, Centro Cultural Sampedrano, 2023</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/yaxis.jpg" alt="Yaxis — mixed media painting" loading="lazy">
+        <figcaption>
+          <h3>Yaxis</h3>
+          <p class="work-meta">2024 · Mixed media · 60 × 60 cm</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/vida-transitoria.jpg" alt="Vida transitoria — mixed media painting" loading="lazy">
+        <figcaption>
+          <h3>Vida transitoria</h3>
+          <p class="work-meta">2024 · Mixed media · 50 × 40 cm</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/guajacas.jpg" alt="Guajacas — mixed media painting" loading="lazy">
+        <figcaption>
+          <h3>Guajacas</h3>
+          <p class="work-meta">2024 · Mixed media · 100 × 100 cm</p>
+          <p class="work-note">XXXVI National Art Salon, Centro Cultural Sampedrano, 2024</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/otras-historias.jpg" alt="Otras Historias — mixed media painting" loading="lazy">
+        <figcaption>
+          <h3>Otras Historias</h3>
+          <p class="work-meta">2024 · Mixed media · 90 × 60 cm</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/downtown-at-noon.jpg" alt="Downtown at noon — acrylic painting of a city street at midday" loading="lazy">
+        <figcaption>
+          <h3>Downtown at noon</h3>
+          <p class="work-meta">2020 · Acrylic on canvas · 50 × 70 cm</p>
+        </figcaption>
+      </figure>
+
+      <figure class="work">
+        <img src="images/works/buscando-la-libertad.jpg" alt="Buscando la libertad — acrylic painting" loading="lazy">
+        <figcaption>
+          <h3>Buscando la libertad</h3>
+          <p class="work-meta">2019 · Acrylic on canvas · 70 × 100 cm</p>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ========== STATEMENT DE ARTISTA ========== -->
+  <section id="statement" class="section section-narrow">
+    <h2 class="section-title">Artist Statement</h2>
+    <div class="prose">
+      <p>My artistic practice explores the intricate relationship between people, everyday life, and the spaces they inhabit. Through painting, I examine ordinary moments, daily routines, and human interactions as micro-reflections of broader social realities. I am drawn to the quiet narratives embedded within urban environments: the subtle gestures, shared memories, and unspoken struggles that often go unnoticed, yet reveal the profound complexity of the human experience.</p>
+
+      <p>My work focuses on the vulnerability, resilience, and beauty found in daily life, with a particular emphasis on communities shaped by labor, kinship, and communal spaces. I investigate how individuals construct meaning and identity through their surroundings, transforming mundane settings into rich landscapes of emotion and collective memory.</p>
+
+      <p>Informed by my background in interior design, I approach the canvas not just as a composition, but as a container of human experience, viewing space as something deeply narrative rather than merely structural. Ultimately, my practice seeks to create visual testimonies that bridge personal histories with universal emotions, highlighting the invisible threads that connect us across different contexts.</p>
+    </div>
+  </section>
+
+  <!-- ========== BIOGRAFIA ========== -->
+  <section id="about" class="section">
+    <h2 class="section-title">About</h2>
+    <div class="about-layout">
+      <img class="portrait" src="images/about/ninfa-studio.jpg" alt="Ninfa Espinoza seated in her studio in front of two of her paintings">
+      <div class="prose">
+        <p>Ninfa Espinoza (b. 1992) is a Honduran visual artist raised in San Pedro Sula. Her formal artistic journey began at the Instituto Vocacional de Arte (IVA), where she studied drawing and painting from 2009 to 2011. During this foundational period, she participated in collective exhibitions and engaged in community-driven public art, creating murals for local schools, streets, and bridges. Building upon this foundation, she has spent over a decade developing her practice through rigorous self-directed study, deeply influenced by the light and expressive brushwork of the Impressionists.</p>
+
+        <p>Espinoza's work offers a compelling artistic perspective on contemporary Honduran reality, capturing the nuances of daily life while confronting pressing social issues. Her background in spatial design — studying Interior Design at CEUTEC — subtly informs her understanding of environment and composition.</p>
+
+        <p>Recognized as a rising voice in the region, Espinoza received an Honorable Mention for "New Artist" at the XXXIII National Art Salon at the Centro Cultural Sampedrano in 2023. Her work has been showcased in key cultural spaces across Central America, including the Centro Cultural de España in Costa Rica (2025) and subsequent exhibitions in Tegucigalpa (2026). She actively contributes to her local arts community as a member of the <strong>Colectivo de Pintores Sampedranos (CPS)</strong> and the <strong>Asociación de Mujeres Artistas Hondureñas (AMAH)</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CURRICULUM ========== -->
+  <section id="cv" class="section section-narrow">
+    <h2 class="section-title">CV</h2>
+
+    <h3 class="cv-heading">Education</h3>
+    <ul class="cv-list">
+      <li><span class="year">2022—</span> Centro Universitario Tecnológico (CEUTEC) — Interior Design Technician</li>
+      <li><span class="year">2009—11</span> Instituto Vocacional de Arte (IVA) — Drawing and Painting</li>
+    </ul>
+
+    <h3 class="cv-heading">Exhibitions</h3>
+    <ul class="cv-list">
+      <li><span class="year">2026</span> <em>Te Odio</em> — Centro Cultural de España, Tegucigalpa, Honduras <span class="tag">Group</span></li>
+      <li><span class="year">2026</span> <em>Esencia de Mujer</em> — Centro Cultural Sampedrano, San Pedro Sula <span class="tag">Group</span></li>
+      <li><span class="year">2025</span> <em>Te Odio</em> — Centro Cultural de España, San José, Costa Rica <span class="tag">Group</span></li>
+      <li><span class="year">2025</span> <em>El Arte y la Paz</em>, AMAH — Torre Banpaís, San Pedro Sula <span class="tag">Group</span></li>
+      <li><span class="year">2025</span> XXXVI National Art Salon — Centro Cultural Sampedrano <span class="tag">Group</span></li>
+      <li><span class="year">2024</span> XXXVI National Art Salon — Centro Cultural Sampedrano <span class="tag">Group</span></li>
+      <li><span class="year">2023</span> XXXIII National Art Salon — Centro Cultural Sampedrano <span class="tag">Group</span></li>
+    </ul>
+
+    <h3 class="cv-heading">Awards</h3>
+    <ul class="cv-list">
+      <li><span class="year">2023</span> Honorable Mention, "New Artist" — XXXIII National Art Salon, Centro Cultural Sampedrano</li>
+    </ul>
+
+    <h3 class="cv-heading">Workshops</h3>
+    <ul class="cv-list">
+      <li><span class="year">2023</span> Portfolio, Artistic and Cultural Proposals — Mujeres en las Artes (MUA)</li>
+    </ul>
+
+    <h3 class="cv-heading">Memberships</h3>
+    <ul class="cv-list">
+      <li>Colectivo de Pintores Sampedranos (CPS)</li>
+      <li>Asociación de Mujeres Artistas Hondureñas (AMAH)</li>
+    </ul>
+  </section>
+
+  <!-- ========== CONTACTO ========== -->
+  <section id="contact" class="section section-narrow">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-label">Email</p>
+        <a href="mailto:ninfaespinozam@gmail.com">ninfaespinozam@gmail.com</a>
+      </div>
+      <div>
+        <p class="contact-label">Instagram</p>
+        <a href="https://instagram.com/ninfa.espinozahn" target="_blank" rel="noopener">@ninfa.espinozahn</a>
+      </div>
+      <div>
+        <p class="contact-label">Based in</p>
+        <p>San Pedro Sula, Honduras</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> Ninfa Espinoza. All works and images are the property of the artist.</p>
+  </footer>
+
+  <!--
+    VISOR DE IMAGENES (lightbox)
+    Empieza oculto. script.js lo muestra cuando haces clic en una obra.
+  -->
+  <div id="lightbox" class="lightbox" hidden>
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+  </div>
+
+  <!-- Conecta este archivo con el JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

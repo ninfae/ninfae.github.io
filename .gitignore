@@ -1,0 +1,11 @@
+# Archivos que Git debe IGNORAR (no guardar ni subir a GitHub).
+
+# Imagenes crudas sacadas del PDF. Son 16 MB de material de
+# trabajo: detalles, vistas de sala y duplicados. Las buenas
+# ya estan copiadas en images/, asi que estas no se suben.
+imagenes/
+
+# Basura que Windows y macOS crean solos en las carpetas
+Thumbs.db
+desktop.ini
+.DS_Store
